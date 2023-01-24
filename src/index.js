@@ -4,12 +4,42 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+
+import { ThemeProvider, createTheme } from "@aws-amplify/ui-react";
+import { studioTheme } from './ui-components';
+
+const updatedTheme = createTheme({
+    // Extend the theme to update the button color
+    name: "my-theme-updates", 
+    tokens: {
+        components: {
+            button: {
+                primary: {
+                    backgroundColor: {
+                        value: "#b71c1c"
+                    },
+                },
+            },
+        },
+    },
+}, studioTheme)
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <ThemeProvider theme={updatedTheme}>
+        <App />
+    </ThemeProvider>
+);
+
+/*
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
+*/
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
