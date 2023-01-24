@@ -5,4 +5,5 @@
  **************************************************************************/
 
 export { default as studioTheme } from "./studioTheme";
+export { default as Jsonform } from "./Jsonform";
 export { default as Hellowroldform } from "./Hellowroldform";
